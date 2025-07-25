@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>통역사 지원 신청서</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>통역사 지원 신청서</h1>
+        
+        <form id="interpreterForm">
+            <div class="form-group">
+                <label for="name">성명 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일 <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">연락처 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birth">생년월일</label>
+                <input type="date" id="birth" name="birth">
+            </div>
+
+            <div class="form-group">
+                <label for="address">주소</label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <div class="form-group">
+                <label>전문 통역 언어 <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="english" name="languages" value="영어">
+                        <label for="english">영어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chinese" name="languages" value="중국어">
+                        <label for="chinese">중국어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="japanese" name="languages" value="일본어">
+                        <label for="japanese">일본어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="spanish" name="languages" value="스페인어">
+                        <label for="spanish">스페인어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="french" name="languages" value="프랑스어">
+                        <label for="french">프랑스어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="german" name="languages" value="독일어">
+                        <label for="german">독일어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="russian" name="languages" value="러시아어">
+                        <label for="russian">러시아어</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="other" name="languages" value="기타">
+                        <label for="other">기타</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">통역 경력 (년)</label>
+                <select id="experience" name="experience">
+                    <option value="">선택해주세요</option>
+                    <option value="신입">신입 (1년 미만)</option>
+                    <option value="1-3년">1-3년</option>
+                    <option value="3-5년">3-5년</option>
+                    <option value="5-10년">5-10년</option>
+                    <option value="10년이상">10년 이상</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="specialization">전문 분야</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="business" name="specialization" value="비즈니스">
+                        <label for="business">비즈니스</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="medical" name="specialization" value="의료">
+                        <label for="medical">의료</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="legal" name="specialization" value="법률">
+                        <label for="legal">법률</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="technical" name="specialization" value="기술/IT">
+                        <label for="technical">기술/IT</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="conference" name="specialization" value="회의통역">
+                        <label for="conference">회의통역</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tourism" name="specialization" value="관광">
+                        <label for="tourism">관광</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="certificates">보유 자격증</label>
+                <textarea id="certificates" name="certificates" rows="3" placeholder="관련 자격증이나 인증서를 입력해주세요"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="portfolio">포트폴리오/경력사항</label>
+                <textarea id="portfolio" name="portfolio" rows="5" placeholder="주요 통역 경험이나 포트폴리오를 상세히 기술해주세요"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="motivation">지원 동기</label>
+                <textarea id="motivation" name="motivation" rows="4" placeholder="지원 동기나 각오를 입력해주세요"></textarea>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="btn">지원서 제출</button>
+                <button type="button" class="btn btn-secondary" onclick="downloadData()">DB 다운로드</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // 폼 제출 처리
+        document.getElementById('interpreterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 필수 항목 검증
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const languages = document.querySelectorAll('input[name="languages"]:checked');
+            
+            if (!name || !email || !phone || languages.length === 0) {
+                alert('필수 항목을 모두 입력해주세요.');
+                return;
+            }
+            
+            // 폼 데이터 수집
+            const formData = new FormData(this);
+            const data = {};
+            
+            // 기본 필드
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
+                    }
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // 체크박스 배열 처리
+            data.languages = Array.from(document.querySelectorAll('input[name="languages"]:checked')).map(cb => cb.value);
+            data.specialization = Array.from(document.querySelectorAll('input[name="specialization"]:checked')).map(cb => cb.value);
+            
+            console.log('제출된 데이터:', data);
+            alert('지원서가 성공적으로 제출되었습니다!');
+            
+            // 실제 서버 전송 시에는 다음과 같은 코드 사용
+            // fetch('/submit-application', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(data)
+            // });
+        });
+
+        // DB 다운로드 기능
+        function downloadData() {
+            // 실제 구현에서는 서버에서 데이터를 가져와야 합니다
+            // 예시용 더미 데이터
+            const dummyData = [
+                {
+                    id: 1,
+                    name: "김통역",
+                    email: "interpreter1@example.com",
+                    phone: "010-1234-5678",
+                    languages: ["영어", "중국어"],
+                    experience: "3-5년",
+                    specialization: ["비즈니스", "회의통역"],
+                    submitDate: "2024-01-15"
+                },
+                {
+                    id: 2,
+                    name: "이번역",
+                    email: "interpreter2@example.com",
+                    phone: "010-9876-5432",
+                    languages: ["일본어", "영어"],
+                    experience: "5-10년",
+                    specialization: ["의료", "기술/IT"],
+                    submitDate: "2024-01-20"
+                }
+            ];
+            
+            // CSV 형태로 데이터 변환
+            const csvContent = convertToCSV(dummyData);
+            
+            // 파일 다운로드
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', '통역사_지원자_데이터.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            alert('지원자 데이터가 다운로드되었습니다!');
+        }
+        
+        // CSV 변환 함수
+        function convertToCSV(data) {
+            const headers = ['ID', '성명', '이메일', '연락처', '전문언어', '경력', '전문분야', '제출일'];
+            const csvArray = [headers.join(',')];
+            
+            data.forEach(row => {
+                const values = [
+                    row.id,
+                    `"${row.name}"`,
+                    `"${row.email}"`,
+                    `"${row.phone}"`,
+                    `"${row.languages.join(', ')}"`,
+                    `"${row.experience}"`,
+                    `"${row.specialization.join(', ')}"`,
+                    `"${row.submitDate}"`
+                ];
+                csvArray.push(values.join(','));
+            });
+            
+            return '\uFEFF' + csvArray.join('\n'); // UTF-8 BOM 추가
+        }
+
+        // 실제 서버에서 데이터를 가져오는 함수 (참고용)
+        async function fetchDataFromServer() {
+            try {
+                const response = await fetch('/api/interpreter-applications');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('데이터 가져오기 실패:', error);
+                return [];
+            }
+        }
+    </script>
+</body>
+</html>
